@@ -1,22 +1,13 @@
- // src/components/Post/index.js
-    import React, { Component } from "react";
+import React, { Component } from "react";
     import "./Post.css";
-    import { Query } from "react-apollo";
-    import gql from "graphql-tag";
-    
     class Post extends Component {
-    	constructor(props){
-            super(props);
-        }  
-      
-      
-    render() {
+      render() {
         const nickname = this.props.nickname;
         const avatar = this.props.avatar;
         const image = this.props.image;
         const caption = this.props.caption;
-        
-        return <article className="Post" ref="Post">
+        return (
+          <article className="Post" ref="Post">
             <header>
               <div className="Post-user">
                 <div className="Post-user-avatar">
@@ -33,12 +24,11 @@
               </div>
             </div>
             <div className="Post-caption">
-              <strong>{nickname}</strong>{caption}
+              <strong>{nickname}</strong> {caption}
             </div>
-          </article>; 
-        }
+          </article>
+        );
+      }
     }
+
     export default Post;
-    
-   
-    
